@@ -1,0 +1,21 @@
+table
+  thead
+    th Name
+    th Due
+    th Photo
+    th Complete
+    th Tags
+    th Priority
+  tbody
+  each task in tasks
+    tr(style='background-color:#{task.priority.color};')
+      td= task.name
+      td= task.due
+      td= task.photo
+      form(method:'post', action='/tasks')
+      td= task.isComplete
+        button Update
+      td= task.tags
+      td= task.priority.name
+
+    //page

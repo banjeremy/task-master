@@ -1,0 +1,19 @@
+extends ../shared/template
+block content
+
+  h2 tasks Index.jade
+
+  form(method='post', action='/tasks')
+    input(name="name", type="text", placeholder="Laundry", autofocus=true)
+    br
+    input(name="due", type="date")
+    br
+    input(name="photo", type="text")
+    br
+    input(name="tags", type="text")
+    br
+    select(name="priorityId")
+      each priority in priorities
+        option(value="#{priority._id}")= priority.name
+    br
+    button Save him
